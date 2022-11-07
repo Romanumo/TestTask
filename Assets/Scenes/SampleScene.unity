@@ -156,7 +156,7 @@ MonoBehaviour:
   tiles:
   - wall: {fileID: 1261794988}
   - wall: {fileID: 1567154723}
-  scrollSpeed: 3
+  scrollSpeed: 30
 --- !u!4 &21482080
 Transform:
   m_ObjectHideFlags: 0
@@ -1608,7 +1608,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal
+  m_Text: "\u041D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u044B\u0439"
 --- !u!222 &1119962505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2510,9 +2510,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Easy
-
-'
+  m_Text: "\u041B\u0435\u0433\u043A\u0438\u0439\n"
 --- !u!222 &1830933190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2649,9 +2647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hard
-
-'
+  m_Text: "\u0422\u044F\u0436\u0435\u043B\u044B\u0439"
 --- !u!222 &1870809520
 CanvasRenderer:
   m_ObjectHideFlags: 0
