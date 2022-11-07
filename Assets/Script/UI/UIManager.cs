@@ -11,17 +11,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text attemptAmountText;
     [SerializeField] private Text timePassedText;
 
-    private int difficulty;
-
     private void Start()
     {
         GlobalLibrary.gameManager.onPlayerDeath += ShowGameOverScreen;
-    }
-
-    public void StartGame()
-    {
-        menuWindow.SetActive(false);
-        GlobalLibrary.gameManager.StartGame(difficulty);
+        GlobalLibrary.gameManager.onGameRestart += () => GameOverUIState(false);
+        GlobalLibrary.gameManager.onGameStart += () => MenuUIState(false);
     }
 
     void ShowGameOverScreen()
@@ -31,13 +25,9 @@ public class UIManager : MonoBehaviour
         UpdateTimeText();
     }
 
-    public void RestartGame()
-    {
-        GlobalLibrary.gameManager.RestartGame(difficulty);
-        gameOverWindow.SetActive(false);
-    }
+    void GameOverUIState(bool state) => gameOverWindow.SetActive(state);
 
-    public void ChangeDifficulty(int difficulty) => this.difficulty = Mathf.Clamp(difficulty, 0, 2);
+    void MenuUIState(bool state) => menuWindow.SetActive(state);
 
     void UpdateAttemptText() => attemptAmountText.text = "Количество попыток: " + GlobalLibrary.gameManager.attemptAmount;
 

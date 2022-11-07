@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void OnDeath();
+public delegate void OnGameEvent();
 
 public class GameManager : MonoBehaviour
 {
@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour
 
     BallMovement player;
     SceneScroller sceneScroller;
+    int difficulty;
     bool isGameGoing = false;
+
     public int attemptAmount { get; private set; }
     public float timePassed { get; private set; }
 
-    public OnDeath onPlayerDeath;
+    public OnGameEvent onPlayerDeath;
+    public OnGameEvent onGameRestart;
+    public OnGameEvent onGameStart;
 
     void Start()
     {
@@ -22,6 +26,10 @@ public class GameManager : MonoBehaviour
         attemptAmount = PlayerPrefs.GetInt(ATTEMPTS_AMOUNT_PREFS);
 
         onPlayerDeath += StopGame;
+        onGameRestart += () => RestartSettings(difficulty);
+
+        onGameStart += LoadPlayer;
+        onGameStart += () => SetUpGame(difficulty);
     }
 
     void Update()
@@ -39,20 +47,23 @@ public class GameManager : MonoBehaviour
             onPlayerDeath.Invoke();
     }
 
-    public void StartGame(int difficulty)
+    public void Restart()
     {
-        LoadPlayer();
-        SetUpGame(difficulty);
+        if (onGameRestart != null)
+            onGameRestart.Invoke();
     }
 
-    public void RestartGame(int difficulty)
+    public void StartGame()
+    {
+        if (onGameStart != null)
+            onGameStart.Invoke();
+    }
+
+    void RestartSettings(int difficulty)
     {
         SetUpGame(difficulty);
         sceneScroller.RestartScroller();
-
-        player.RestartSpeed();
         player.enabled = true;
-        player.transform.position = Vector3.zero;
     }
 
     void StopGame()
@@ -77,6 +88,8 @@ public class GameManager : MonoBehaviour
         Player.transform.position = new Vector3(0, 0, 0);
         player = Player.GetComponent<BallMovement>();
     }
+
+    public void ChangeDifficulty(int difficulty) => this.difficulty = Mathf.Clamp(difficulty, 0, 2);
 
     void UpdateGameTimer() => timePassed += Time.deltaTime;
 }

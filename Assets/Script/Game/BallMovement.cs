@@ -11,6 +11,7 @@ public class BallMovement : MonoBehaviour
     void Start()
     {
         TimerManager.manager.AddTimer(() => IncreaseVerticalSpeed(verticalSpeedIncriment), 15f, true);
+        GlobalLibrary.gameManager.onGameRestart += RestartPlayer;
     }
 
     void Update()
@@ -18,7 +19,13 @@ public class BallMovement : MonoBehaviour
         VerticalMovement();
     }
 
-    public void RestartSpeed() => verticalSpeedIncrease = 0;
+    void RestartPlayer()
+    {
+        RestartSpeed();
+        this.transform.position = Vector3.zero;
+    }
+
+    void RestartSpeed() => verticalSpeedIncrease = 0;
 
     void IncreaseVerticalSpeed(float verticalIncrease) => verticalSpeedIncrease += verticalIncrease;
 

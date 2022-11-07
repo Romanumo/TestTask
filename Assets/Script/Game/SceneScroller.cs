@@ -8,7 +8,7 @@ public class SceneScroller : MonoBehaviour
     public static GameObject obstacleObj { get; private set; }
     [SerializeField] private GameObject _obstacleObj;
     [SerializeField] private Tile[] tiles;
-    [SerializeField] float scrollSpeed = 3f;
+    [SerializeField] float scrollSpeed = 30f;
 
     float tileSize;
     float scrollSpeedIncrease;
