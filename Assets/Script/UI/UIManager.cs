@@ -13,13 +13,18 @@ public class UIManager : MonoBehaviour
 
     private int difficulty;
 
+    private void Start()
+    {
+        GlobalLibrary.gameManager.onPlayerDeath += ShowGameOverScreen;
+    }
+
     public void StartGame()
     {
         menuWindow.SetActive(false);
         GlobalLibrary.gameManager.StartGame(difficulty);
     }
 
-    public void ShowGameOverScreen()
+    void ShowGameOverScreen()
     {
         gameOverWindow.SetActive(true);
         UpdateAttemptText();

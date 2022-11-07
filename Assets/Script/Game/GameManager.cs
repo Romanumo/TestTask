@@ -39,15 +39,6 @@ public class GameManager : MonoBehaviour
             onPlayerDeath.Invoke();
     }
 
-    void StopGame()
-    {
-        attemptAmount++;
-        PlayerPrefs.SetInt(ATTEMPTS_AMOUNT_PREFS, attemptAmount);
-
-        isGameGoing = false;
-        player.enabled = false;
-    }
-
     public void StartGame(int difficulty)
     {
         LoadPlayer();
@@ -62,6 +53,15 @@ public class GameManager : MonoBehaviour
         player.RestartSpeed();
         player.enabled = true;
         player.transform.position = Vector3.zero;
+    }
+
+    void StopGame()
+    {
+        attemptAmount++;
+        PlayerPrefs.SetInt(ATTEMPTS_AMOUNT_PREFS, attemptAmount);
+
+        isGameGoing = false;
+        player.enabled = false;
     }
 
     void SetUpGame(int difficulty)
