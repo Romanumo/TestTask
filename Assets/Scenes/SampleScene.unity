@@ -156,6 +156,7 @@ MonoBehaviour:
   tiles:
   - wall: {fileID: 1261794988}
   - wall: {fileID: 1567154723}
+  scrollSpeed: 3
 --- !u!4 &21482080
 Transform:
   m_ObjectHideFlags: 0
@@ -378,11 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e876bc3ee8c3ed34a86b4d890b8ed24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacleObj: {fileID: 788920519711952465, guid: e58ccf6845567024ba4d0bc5c54893a0, type: 3}
-  tiles:
-  - wall: {fileID: 1261794988}
-  - wall: {fileID: 1567154723}
-  scrollSpeed: 30
 --- !u!4 &151649012
 Transform:
   m_ObjectHideFlags: 0
@@ -604,7 +600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal
+  m_Text: "\u041D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u044B\u0439"
 --- !u!222 &383746903
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -834,9 +830,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hard
-
-'
+  m_Text: "\u0422\u044F\u0436\u0435\u043B\u044B\u0439\n"
 --- !u!222 &671457373
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1053,9 +1047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Play
-
-'
+  m_text: "\u0418\u0433\u0440\u0430\u0442\u044C\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1423,9 +1415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Easy
-
-'
+  m_Text: "\u041B\u0435\u0433\u043A\u0438\u0439"
 --- !u!222 &1064940071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2785,8 +2775,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 628.8301, y: 616.45996}
-  m_SizeDelta: {x: 971.816, y: 180.54932}
+  m_AnchoredPosition: {x: 656.149, y: 616.45996}
+  m_SizeDelta: {x: 1424.4785, y: 180.5493}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1892490279
 MonoBehaviour:
@@ -2821,7 +2811,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game
+  m_Text: "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 \u0437\u0430\u0434\u0430\u043D\u0438\u0435"
 --- !u!222 &1892490280
 CanvasRenderer:
   m_ObjectHideFlags: 0
